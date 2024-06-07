@@ -3,7 +3,7 @@ const request = require('postman-request')
 const geocode = (address, callback) => {
     const url = 'http://www.mapquestapi.com/geocoding/v1/address?key=9lvkS3ctQo0cFARV408R5JuPBZbcYw5M&location='+ encodeURIComponent(address)+'&maxResults=1&thumbMaps=true'
 
-    request({url, json:true}, (error, {body} ) => {
+    request({url, json:true}, (error, {body} = {}) => {
         if(error){
             callback('Unable to connect to location services!', undefined)
         }
